@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"/Users/dayoff/Projects/CyberPet/CyberPet/Content/File.spritefont","/Users/dayoff/Projects/CyberPet/CyberPet/Content/bin/DesktopGL/Content/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21538,1.286923
+"/Users/dayoff/Projects/CyberPet/CyberPet/Content/Floor.png","/Users/dayoff/Projects/CyberPet/CyberPet/Content/bin/DesktopGL/Content/Floor.xnb","TextureProcessor","Texture2DContent",1292,437,0.252271
+"/Users/dayoff/Projects/CyberPet/CyberPet/Content/Sit_19x15x8.png","/Users/dayoff/Projects/CyberPet/CyberPet/Content/bin/DesktopGL/Content/Sit_19x15x8.xnb","TextureProcessor","Texture2DContent",2081,9205,0.662867
+"/Users/dayoff/Projects/CyberPet/CyberPet/Content/StatusBarTex.png","/Users/dayoff/Projects/CyberPet/CyberPet/Content/bin/DesktopGL/Content/StatusBarTex.xnb","TextureProcessor","Texture2DContent",1261,125,0.175029

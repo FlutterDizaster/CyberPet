@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/File.spritefont</File>
+    <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/Floor.png</File>
+    <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/Sit_19x15x8.png</File>
+    <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/StatusBarTex.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>Font.spritefont</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
