@@ -11,12 +11,16 @@ namespace CyberPet
 
         protected Texture2D texture;
 
+        protected int frameWidth;
+        protected int frameHeight;
+
         protected Vector2 position;
         protected Vector2 origin;
         protected Vector2 scale;
         protected Vector2 size;
+        protected Rectangle frameRect;
 
-        public Vector2 Position { get => position; set => position = value; }
+        public Vector2 Position { get => position; set => UpdatePosition(value); }
         public Vector2 Origin { get => origin; set => origin = value; }
         public Vector2 Scale { get => scale; set => SetScale(value); }
         public int Width { get => (int)size.X; set => SetWidth(value); }
@@ -36,12 +40,17 @@ namespace CyberPet
             size.Y = scale.Y * texture.Height;
             horizontalSegments = segments.X;
             verticalSegments = segments.Y;
+
+            frameWidth = texture.Width / segments.X;
+            frameHeight = texture.Height / segments.Y;
+
+            frameRect = new Rectangle(0, 0, frameWidth, frameHeight);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullNone);
-            spriteBatch.Draw(texture, Vector2.Zero, Color.White);
+            spriteBatch.Draw(texture, position, frameRect, Color.White, 0f, Origin, Scale, SpriteEffects.None, 0f);
             spriteBatch.End();
         }
 
@@ -67,6 +76,11 @@ namespace CyberPet
             this.scale = scale;
             size.X = scale.X * texture.Width / horizontalSegments;
             size.Y = scale.Y * texture.Height / verticalSegments;
+        }
+
+        protected virtual void UpdatePosition(Vector2 position)
+        {
+            this.position = position;
         }
     }
 }

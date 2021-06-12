@@ -15,8 +15,6 @@ namespace CyberPet
         protected Color baseColor;
         protected Color fillColor;
 
-        protected Rectangle frameRect;
-
         public int Factor { get => factor; set => SetWidth(value); }
 
         public StatusBar(ContentManager Content ,Color color, string name) :base(Content.Load<Texture2D>("StatusBarTex"))

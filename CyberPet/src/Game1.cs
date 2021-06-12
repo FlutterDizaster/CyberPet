@@ -43,10 +43,22 @@ namespace CyberPet
             StatusBar staminaBar = new StaminaBar(Content, pet);
             staminaBar.Position = new Vector2(0, 44);
 
+            Button buttonFeed = new Button(Content, "Feed", pet.Feed);
+            buttonFeed.Position = new Vector2(0, _graphics.PreferredBackBufferHeight - buttonFeed.Height);
+
+            Button buttonPlay = new Button(Content, "Play", pet.Play);
+            buttonPlay.Position = new Vector2((_graphics.PreferredBackBufferWidth - buttonPlay.Width) / 2, _graphics.PreferredBackBufferHeight - buttonPlay.Height);
+
+            Button buttonSleep = new Button(Content, "Sleep", pet.Sleep);
+            buttonSleep.Position = new Vector2(_graphics.PreferredBackBufferWidth - buttonSleep.Width, _graphics.PreferredBackBufferHeight - buttonSleep.Height);
+
             entities.Add(pet);
             entities.Add(healthBar);
             entities.Add(hungerBar);
             entities.Add(staminaBar);
+            entities.Add(buttonFeed);
+            entities.Add(buttonPlay);
+            entities.Add(buttonSleep);
         }
 
         protected override void Update(GameTime gameTime)

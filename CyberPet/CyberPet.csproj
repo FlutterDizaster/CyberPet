@@ -13,6 +13,8 @@
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <None Remove="src\" />
+    <None Remove="src\Buttons\" />
+    <None Remove="src\StatusBars\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -30,5 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
+    <Folder Include="src\Buttons\" />
+    <Folder Include="src\StatusBars\" />
   </ItemGroup>
 </Project>
