@@ -12,9 +12,6 @@ namespace CyberPet
         private Point segments;
         private int currentFrame;
         private int frameTime;
-        private int frameWidth;
-        private int frameHeight;
-        private Rectangle frameRect;
 
         private float speed;
         private int health;
@@ -28,7 +25,7 @@ namespace CyberPet
         public int Hunger { get => hunger; }
         public int Stamina { get => stamina; }
 
-        public Pet(Texture2D texture, Point segments, int frameTime) :base(texture)
+        public Pet(Texture2D texture, Point segments, int frameTime) :base(texture, segments)
         {
             this.segments = segments;
             this.frameTime = frameTime;
@@ -36,12 +33,7 @@ namespace CyberPet
             currentFrame = 0;
             position = new Vector2(0, 0);
 
-            frameWidth = texture.Width / segments.X;
-            frameHeight = texture.Height / segments.Y;
-
-            frameRect = new Rectangle(0, 0, frameWidth, frameHeight);
-
-            scale = new Vector2(5);
+            scale = new Vector2(7);
 
             origin = new Vector2(frameWidth / 2, frameHeight);
 
@@ -50,13 +42,6 @@ namespace CyberPet
             hunger = 0;
             stamina = 10;
             petState = PetState.ALIVE;
-        }
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullNone);
-            spriteBatch.Draw(texture, position, frameRect, Color.White, 0f, Origin, Scale, SpriteEffects.None, 0f);
-            spriteBatch.End();
         }
 
         public override void Update(GameTime time)
@@ -81,40 +66,49 @@ namespace CyberPet
 
         public void Feed()
         {
-            if(hunger == 0)
+            if(petState == PetState.ALIVE)
             {
-                health--;
-            }
-            else
-            {
-                hunger--;
+                if (hunger == 0)
+                {
+                    health--;
+                }
+                else
+                {
+                    hunger--;
+                }
             }
         }
 
         public void Play()
         {
-            if(stamina == 0)
+            if(petState == PetState.ALIVE)
             {
-                health--;
-                hunger++;
-            }
-            else
-            {
-                stamina--;
-                hunger++;
+                if (stamina == 0)
+                {
+                    health--;
+                    hunger++;
+                }
+                else
+                {
+                    stamina--;
+                    hunger++;
+                }
             }
         }
 
         public void Sleep()
         {
-            stamina = 10;
-            if (hunger < 10)
+            if (petState == PetState.ALIVE)
             {
-                health++;
-                hunger++;
+                stamina = 10;
+                if (hunger < 10)
+                {
+                    health++;
+                    hunger++;
+                }
+                else
+                    health--;
             }
-            else
-                health--;
         }
 
         private void CheckStatus()

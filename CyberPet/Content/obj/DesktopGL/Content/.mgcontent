@@ -4,12 +4,14 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/Buttons.png</File>
     <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/File.spritefont</File>
     <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/Floor.png</File>
     <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/Sit_19x15x8.png</File>
     <File>/Users/dayoff/Projects/CyberPet/CyberPet/Content/StatusBarTex.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File>Font.spritefont</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
